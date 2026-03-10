@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geetika Motors – Premium Car Service Centre, Pune</title>
+    <meta name="description"
+        content="Geetika Motors – Pune's most advanced automobile workstation. Premium car servicing, wheel alignment, AC repair, denting & painting.">
+    <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        orange: { 400: '#FBBF24', 500: '#F59E0B', 600: '#D97706', 700: '#B45309' },
+                        dark: { 900: '#111827', 800: '#1F2937', 700: '#374151' },
+                        muted: { DEFAULT: '#6B7280', light: '#9CA3AF' },
+                    },
+                    fontFamily: { sans: ['Poppins', 'Inter', 'system-ui', 'sans-serif'] },
+                    borderRadius: { '2xl': '1rem', '3xl': '1.5rem', '4xl': '2rem' }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', 'Inter', sans-serif;
+            color: #111827;
+            background: #fff;
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f3f4f6;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #F59E0B;
+            border-radius: 99px;
+        }
+
+        /* Orange gradient */
+        .btn-orange {
+            background: linear-gradient(135deg, #FBBF24 0%, #F59E0B 50%, #D97706 100%);
+            color: #fff;
+            font-weight: 700;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+        }
+
+        .btn-orange:hover {
+            box-shadow: 0 8px 25px rgba(245, 158, 11, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .btn-orange-outline {
+            border: 2px solid #F59E0B;
+            color: #F59E0B;
+            font-weight: 700;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-orange-outline:hover {
+            background: #F59E0B;
+            color: #fff;
+            box-shadow: 0 6px 20px rgba(245, 158, 11, 0.35);
+        }
+
+        /* Navbar */
+        #navbar {
+            background: #fff;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .nav-link {
+            position: relative;
+            font-weight: 500;
+            color: #374151;
+            transition: color 0.25s;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #F59E0B;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #F59E0B;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Mobile menu */
+        #mobile-menu {
+            display: none;
+        }
+
+        #mobile-menu.open {
+            display: block;
+        }
+
+        /* Section badge */
+        .badge-orange {
+            display: inline-block;
+            color: #F59E0B;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-bottom: 0.75rem;
+        }
+
+        /* Image hover zoom */
+        .img-zoom {
+            overflow: hidden;
+            border-radius: 20px;
+        }
+
+        .img-zoom img {
+            transition: transform 0.5s ease;
+            width: 100%;
+            display: block;
+        }
+
+        .img-zoom:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Card */
+        .card {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+            transform: translateY(-5px);
+        }
+
+        /* Service icon */
+        .svc-icon-wrap {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, #FBBF24, #D97706);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            color: #fff;
+            flex-shrink: 0;
+        }
+
+        /* Stat card */
+        .stat-card {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .stat-card:hover {
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+            transform: translateY(-4px);
+        }
+
+        /* Gallery */
+        .gal-item {
+            overflow: hidden;
+            border-radius: 14px;
+        }
+
+        .gal-item img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            transition: transform 0.45s ease;
+            display: block;
+        }
+
+        .gal-item:hover img {
+            transform: scale(1.08);
+        }
+
+        /* Testimonial */
+        .testi-card {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
+            transition: all 0.3s;
+        }
+
+        .testi-card:hover {
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+            transform: translateY(-4px);
+        }
+
+        /* Feature bullet */
+        .feature-item {
+            display: flex;
+            gap: 0.75rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .feature-dot {
+            width: 10px;
+            height: 10px;
+            background: #F59E0B;
+            border-radius: 50%;
+            flex-shrink: 0;
+            margin-top: 6px;
+        }
+
+        /* Pricing */
+        .price-card {
+            border-radius: 20px;
+            border: 2px solid #F3F4F6;
+            transition: all 0.35s;
+        }
+
+        .price-card:hover {
+            border-color: #F59E0B;
+            box-shadow: 0 16px 48px rgba(245, 158, 11, 0.15);
+            transform: translateY(-6px);
+        }
+
+        .price-card.featured {
+            border-color: #F59E0B;
+            background: linear-gradient(160deg, #FFFBEB, #fff);
+        }
+
+        /* Section spacing */
+        .sec {
+            padding: 5rem 0;
+        }
+
+        /* Form */
+        input,
+        textarea {
+            background: #F9FAFB;
+            border: 1.5px solid #E5E7EB;
+            border-radius: 10px;
+            padding: 0.75rem 1rem;
+            width: 100%;
+            font-family: inherit;
+            font-size: 0.9rem;
+            color: #111827;
+            transition: border-color 0.25s, box-shadow 0.25s;
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            color: #9CA3AF;
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #F59E0B;
+            box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.15);
+        }
+
+        /* Orange text gradient */
+        .text-grad {
+            background: linear-gradient(90deg, #F59E0B, #D97706);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Fade-in animation */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(28px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-up {
+            animation: fadeUp 0.7s ease forwards;
+        }
+
+        /* Divider */
+        .orange-divider {
+            width: 50px;
+            height: 4px;
+            background: linear-gradient(90deg, #F59E0B, #D97706);
+            border-radius: 99px;
+            margin: 1rem 0 1.5rem 0;
+        }
+
+        /* Scroll-to-top */
+        #scrollTop {
+            opacity: 0;
+            transform: translateY(12px);
+            transition: all 0.3s;
+        }
+
+        #scrollTop.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ═══════ NAVBAR ═══════ -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <a href="#home" class="flex items-center gap-2.5">
+                    <div class="w-9 h-9 rounded-lg flex items-center justify-center btn-orange">
+                        <i class="fas fa-car text-white text-sm"></i>
+                    </div>
+                    <div class="leading-tight">
+                        <span class="text-lg font-black text-dark-900 tracking-tight">Geetika</span>
+                        <span class="text-lg font-black text-grad tracking-tight"> Motors</span>
+                    </div>
+                </a>
+                <!-- Desktop Nav -->
+                <div class="hidden lg:flex items-center gap-8">
+                    <a href="#home" class="nav-link text-sm">Home</a>
+                    <a href="#about" class="nav-link text-sm">About</a>
+                    <a href="#services" class="nav-link text-sm">Services</a>
+                    <a href="#packages" class="nav-link text-sm">Pricing</a>
+                    <a href="#gallery" class="nav-link text-sm">Gallery</a>
+                    <a href="#contact" class="nav-link text-sm">Contact</a>
+                </div>
+                <div class="hidden lg:flex items-center gap-4">
+                    <a href="tel:02026835544"
+                        class="text-sm font-medium text-muted hover:text-orange-500 transition-colors flex items-center gap-1.5">
+                        <i class="fas fa-phone text-orange-500 text-xs"></i>020 2683 5544
+                    </a>
+                    <a href="#contact" class="px-5 py-2.5 text-sm btn-orange">Book Service</a>
+                </div>
+                <!-- Mobile Toggle -->
+                <button onclick="document.getElementById('mobile-menu').classList.toggle('open')"
+                    class="lg:hidden text-dark-700 hover:text-orange-500 p-2 transition-colors">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="lg:hidden border-t border-gray-100" style="background:#fff;">
+            <div class="px-4 py-4 flex flex-col gap-3">
+                <a href="#home"
+                    class="text-dark-700 hover:text-orange-500 py-1.5 text-sm font-medium transition-colors">Home</a>
+                <a href="#about"
+                    class="text-dark-700 hover:text-orange-500 py-1.5 text-sm font-medium transition-colors">About</a>
+                <a href="#services"
+                    class="text-dark-700 hover:text-orange-500 py-1.5 text-sm font-medium transition-colors">Services</a>
+                <a href="#packages"
+                    class="text-dark-700 hover:text-orange-500 py-1.5 text-sm font-medium transition-colors">Pricing</a>
+                <a href="#gallery"
+                    class="text-dark-700 hover:text-orange-500 py-1.5 text-sm font-medium transition-colors">Gallery</a>
+                <a href="#contact"
+                    class="text-dark-700 hover:text-orange-500 py-1.5 text-sm font-medium transition-colors">Contact</a>
+                <a href="#contact" class="mt-1 px-5 py-2.5 btn-orange text-sm text-center">Book Service</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ═══════ HERO ═══════ -->
+    <section id="home" class="pt-16" style="background:linear-gradient(180deg,#FFFBEB 0%,#fff 100%);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+                <!-- Left: Text -->
+                <div class="fade-up">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 bg-orange-50 rounded-full mb-6">
+                        <span class="w-2 h-2 rounded-full bg-orange-500 animate-pulse inline-block"></span>
+                        <span class="text-orange-600 text-xs font-bold uppercase tracking-widest">Pune's Premier Car
+                            Service</span>
+                    </div>
+                    <h1 class="text-5xl md:text-6xl font-black text-dark-900 leading-[1.1] mb-5">
+                        Drive with<br><span class="text-grad">Confidence</span><br>Always.
+                    </h1>
+                    <p class="text-muted text-lg leading-relaxed mb-8 max-w-lg">
+                        In today's fast-moving world, keeping your vehicle in peak condition is not optional — it's
+                        essential. Geetika Motors delivers premium automotive care with genuine parts and expert hands.
+                    </p>
+                    <div class="flex flex-wrap gap-4 mb-12">
+                        <a href="#contact" class="px-8 py-4 btn-orange text-base">Book a Service &ensp;<i
+                                class="fas fa-arrow-right"></i></a>
+                        <a href="#services" class="px-8 py-4 btn-orange-outline text-base">Our Services</a>
+                    </div>
+                    <!-- Mini stats -->
+                    <div class="flex gap-8 flex-wrap">
+                        <div>
+                            <div class="text-3xl font-black text-dark-900">5,320<span class="text-orange-500">+</span>
+                            </div>
+                            <div class="text-xs text-muted uppercase tracking-wider mt-0.5">Happy Customers</div>
+                        </div>
+                        <div class="w-px bg-gray-200"></div>
+                        <div>
+                            <div class="text-3xl font-black text-dark-900">6,760<span class="text-orange-500">+</span>
+                            </div>
+                            <div class="text-xs text-muted uppercase tracking-wider mt-0.5">Cars Serviced</div>
+                        </div>
+                        <div class="w-px bg-gray-200"></div>
+                        <div>
+                            <div class="text-3xl font-black text-dark-900">10<span class="text-orange-500">+</span>
+                            </div>
+                            <div class="text-xs text-muted uppercase tracking-wider mt-0.5">Years Experience</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Right: Image -->
+                <div class="relative">
+                    <div class="img-zoom shadow-2xl" style="border-radius:24px;">
+                        <img src="img/about-one.jpg" alt="Geetika Motors Service Centre"
+                            style="height:500px;object-fit:cover;object-position:center;border-radius:24px;">
+                    </div>
+                    <!-- Floating badge -->
+                    <div
+                        class="absolute -bottom-5 -left-5 bg-white rounded-2xl px-5 py-3 shadow-xl flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl btn-orange flex items-center justify-center">
+                            <i class="fas fa-award text-white"></i>
+                        </div>
+                        <div>
+                            <div class="font-bold text-dark-900 text-sm">Certified Workshop</div>
+                            <div class="text-xs text-muted">Since 2010</div>
+                        </div>
+                    </div>
+                    <div
+                        class="absolute -top-4 -right-4 bg-orange-500 text-white rounded-2xl px-4 py-3 shadow-xl text-sm font-bold">
+                        <div class="text-xl font-black">25<span class="text-orange-200">+</span></div>
+                        <div class="text-orange-100 text-xs">Expert Staff</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════ ABOUT ═══════ -->
+    <section id="about" class="sec bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <!-- Left: Image -->
+                <div class="relative">
+                    <div class="img-zoom shadow-xl" style="border-radius:20px;">
+                        <img src="img/about-one.jpg" alt="Workshop"
+                            style="height:480px;object-fit:cover;border-radius:20px;">
+                    </div>
+                    <!-- Equipment card overlay -->
+                    <div
+                        class="absolute -bottom-6 -right-6 bg-white rounded-2xl p-4 shadow-2xl max-w-xs hidden md:block">
+                        <div class="flex items-center gap-2 mb-2">
+                            <div class="w-7 h-7 rounded-lg btn-orange flex items-center justify-center text-xs"><i
+                                    class="fas fa-tools"></i></div>
+                            <span class="text-sm font-bold text-dark-900">Advanced Equipment</span>
+                        </div>
+                        <p class="text-xs text-muted">Wheel Aligner (Carman, Korea) · Wheel Balancer (Hoffman, Germany)
+                            · OBD-II Scanner</p>
+                    </div>
+                </div>
+                <!-- Right: Content -->
+                <div>
+                    <span class="badge-orange">About Us</span>
+                    <h2 class="text-4xl md:text-5xl font-black text-dark-900 leading-tight mb-2">
+                        Your Vehicle's<br><span class="text-grad">Trusted Partner</span>
+                    </h2>
+                    <div class="orange-divider"></div>
+                    <p class="text-muted leading-relaxed mb-5">
+                        In today's fast-moving world, it has become mandatory to keep up the pace with others. Your
+                        automobile is one of the tools that helps you do the same. We at <strong
+                            class="text-dark-900">GEETIKA MOTORS</strong> take pleasure in introducing ourselves as one
+                        of the most advanced &amp; upcoming automobile workstations in Pune.
+                    </p>
+                    <p class="text-muted leading-relaxed mb-8">
+                        Our objective is to provide a high-quality service at a reasonable cost that will result in 100%
+                        customer satisfaction. We offer excellent quality of service for our valuable customers, using
+                        only genuine parts and the latest diagnostic technology.
+                    </p>
+                    <!-- Feature Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8">
+                        <div>
+                            <div class="feature-item">
+                                <div class="feature-dot"></div>
+                                <div>
+                                    <div class="font-bold text-dark-900 text-sm mb-0.5">Premium Equipment</div>
+                                    <div class="text-muted text-xs">Industry-leading tools from Korea, Germany and Japan
+                                        for precision results.</div>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-dot"></div>
+                                <div>
+                                    <div class="font-bold text-dark-900 text-sm mb-0.5">Genuine Parts</div>
+                                    <div class="text-muted text-xs">Only authentic OEM-grade parts to ensure lasting
+                                        performance and safety.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="feature-item">
+                                <div class="feature-dot"></div>
+                                <div>
+                                    <div class="font-bold text-dark-900 text-sm mb-0.5">Expert Workmanship</div>
+                                    <div class="text-muted text-xs">25+ certified technicians with deep expertise across
+                                        all makes and models.</div>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-dot"></div>
+                                <div>
+                                    <div class="font-bold text-dark-900 text-sm mb-0.5">Cashless Insurance</div>
+                                    <div class="text-muted text-xs">Partnered with 8+ leading insurers for hassle-free
+                                        cashless claim processing.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Founder -->
+                    <div class="flex items-center gap-3 mt-6 p-4 bg-amber-50 rounded-2xl border border-amber-100">
+                        <div
+                            class="w-11 h-11 rounded-full btn-orange flex items-center justify-center font-black text-base flex-shrink-0">
+                            A</div>
+                        <div>
+                            <div class="font-bold text-dark-900 text-sm">Mr. Amish Shaha</div>
+                            <div class="text-xs text-muted">Founder, Geetika Motors</div>
+                        </div>
+                        <a href="#contact" class="ml-auto btn-orange px-4 py-2 text-xs whitespace-nowrap">Get in
+                            Touch</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════ SERVICES ═══════ -->
+    <section id="services" class="sec" style="background:#F9FAFB;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-14">
+                <span class="badge-orange">What We Do</span>
+                <h2 class="text-4xl md:text-5xl font-black text-dark-900 mb-4">Our <span
+                        class="text-grad">Services</span></h2>
+                <p class="text-muted text-lg max-w-xl mx-auto">Expert care for every component of your vehicle,
+                    delivered with precision and genuine parts.</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+
+                <div class="card p-6">
+                    <div class="svc-icon-wrap mb-4"><i class="fas fa-wrench"></i></div>
+                    <h3 class="font-bold text-dark-900 mb-1.5">General Servicing</h3>
+                    <p class="text-muted text-sm">Complete engine oil change, filter replacement and full vehicle
+                        checkup.</p>
+                </div>
+                <div class="card p-6">
+                    <div class="svc-icon-wrap mb-4"><i class="fas fa-circle-dot"></i></div>
+                    <h3 class="font-bold text-dark-900 mb-1.5">Wheel Alignment</h3>
+                    <p class="text-muted text-sm">Precision alignment using Carman Korea equipment for perfect handling.
+                    </p>
+                </div>
+                <div class="card p-6">
+                    <div class="svc-icon-wrap mb-4"><i class="fas fa-snowflake"></i></div>
+                    <h3 class="font-bold text-dark-900 mb-1.5">AC Services</h3>
+                    <p class="text-muted text-sm">Car AC repair, gas refilling, compressor &amp; condenser replacement.
+                    </p>
+                </div>
+                <div class="card p-6">
+                    <div class="svc-icon-wrap mb-4"><i class="fas fa-car-burst"></i></div>
+                    <h3 class="font-bold text-dark-900 mb-1.5">Denting &amp; Painting</h3>
+                    <p class="text-muted text-sm">Car dent repair, accident repair, chassis &amp; undercoating work.</p>
+                </div>
+                <div class="card p-6">
+                    <div class="svc-icon-wrap mb-4"><i class="fas fa-bolt"></i></div>
+                    <h3 class="font-bold text-dark-900 mb-1.5">Electrical / Electronic</h3>
+                    <p class="text-muted text-sm">Battery, ignition, ECU chips, wiring and charging system repairs.</p>
+                </div>
+                <div class="card p-6">
+                    <div class="svc-icon-wrap mb-4"><i class="fas fa-magnifying-glass"></i></div>
+                    <h3 class="font-bold text-dark-900 mb-1.5">Engine Scan</h3>
+                    <p class="text-muted text-sm">Computer diagnostics, OBD-II scanning, RPM &amp; fuel pressure checks.
+                    </p>
+                </div>
+                <div class="card p-6">
+                    <div class="svc-icon-wrap mb-4"><i class="fas fa-spray-can-sparkles"></i></div>
+                    <h3 class="font-bold text-dark-900 mb-1.5">Cleaning Services</h3>
+                    <p class="text-muted text-sm">360° interior cleaning, ceramic coating, wax polishing, eco car wash.
+                    </p>
+                </div>
+                <div class="card p-6">
+                    <div class="svc-icon-wrap mb-4"><i class="fas fa-shield-halved"></i></div>
+                    <h3 class="font-bold text-dark-900 mb-1.5">Insurance Claims</h3>
+                    <p class="text-muted text-sm">Cashless claims with ICICI Lombard, HDFC ERGO, Bajaj Allianz &amp;
+                        more.</p>
+                </div>
+                <div class="card p-6">
+                    <div class="svc-icon-wrap mb-4"><i class="fas fa-gear"></i></div>
+                    <h3 class="font-bold text-dark-900 mb-1.5">Engine Repair</h3>
+                    <p class="text-muted text-sm">Expert engine diagnostics, overhaul and repair by skilled technicians.
+                    </p>
+                </div>
+                <div class="card p-6">
+                    <div class="svc-icon-wrap mb-4"><i class="fas fa-gas-pump"></i></div>
+                    <h3 class="font-bold text-dark-900 mb-1.5">Injector Cleaning</h3>
+                    <p class="text-muted text-sm">Restoring throttle, eliminating black smoke and improving cold starts.
+                    </p>
+                </div>
+                <div class="card p-6">
+                    <div class="svc-icon-wrap mb-4"><i class="fas fa-road"></i></div>
+                    <h3 class="font-bold text-dark-900 mb-1.5">Roadside Assistance</h3>
+                    <p class="text-muted text-sm">24×7 on-road assistance coverage for your peace of mind.</p>
+                </div>
+                <div class="card p-6">
+                    <div class="svc-icon-wrap mb-4"><i class="fas fa-fire-flame-curved"></i></div>
+                    <h3 class="font-bold text-dark-900 mb-1.5">LPG Kit Fitting</h3>
+                    <p class="text-muted text-sm">Government approved LPG kits with RTO permit installation service.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════ STATS ═══════ -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="stat-card">
+                    <div class="text-4xl font-black text-dark-900 mb-1">5,320<span class="text-orange-500">+</span>
+                    </div>
+                    <div class="text-muted text-sm">Happy Customers</div>
+                </div>
+                <div class="stat-card">
+                    <div class="text-4xl font-black text-dark-900 mb-1">6,760<span class="text-orange-500">+</span>
+                    </div>
+                    <div class="text-muted text-sm">Cars Serviced</div>
+                </div>
+                <div class="stat-card">
+                    <div class="text-4xl font-black text-dark-900 mb-1">25<span class="text-orange-500">+</span></div>
+                    <div class="text-muted text-sm">Expert Technicians</div>
+                </div>
+                <div class="stat-card">
+                    <div class="text-4xl font-black text-dark-900 mb-1">10<span class="text-orange-500">+</span></div>
+                    <div class="text-muted text-sm">Years Experience</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════ PRICING ═══════ -->
+    <section id="packages" class="sec" style="background:#F9FAFB;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-14">
+                <span class="badge-orange">Pricing</span>
+                <h2 class="text-4xl md:text-5xl font-black text-dark-900 mb-4">Service <span
+                        class="text-grad">Packages</span></h2>
+                <p class="text-muted text-lg">Transparent pricing for all vehicle segments. Twice a year recommended.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Hatchback -->
+                <div class="price-card bg-white p-8 flex flex-col">
+                    <div class="text-center mb-6">
+                        <div class="w-14 h-14 mx-auto rounded-2xl flex items-center justify-center mb-4 bg-orange-50"><i
+                                class="fas fa-car text-orange-500 text-2xl"></i></div>
+                        <h3 class="text-xl font-black text-dark-900">Hatchback</h3>
+                        <p class="text-muted text-sm">Segment A &amp; B</p>
+                        <div class="mt-4 text-5xl font-black text-dark-900">₹1,499<span
+                                class="text-base font-normal text-muted">/-</span></div>
+                        <p class="text-muted text-xs mt-1">Twice a year</p>
+                    </div>
+                    <ul class="space-y-3 text-sm flex-1">
+                        <li class="flex gap-3 items-start"><i
+                                class="fas fa-check-circle text-orange-500 mt-0.5"></i><span class="text-dark-700">Full
+                                Vehicle Servicing</span></li>
+                        <li class="flex gap-3 items-start"><i
+                                class="fas fa-check-circle text-orange-500 mt-0.5"></i><span class="text-dark-700">Wheel
+                                Alignment</span></li>
+                        <li class="flex gap-3 items-start"><i
+                                class="fas fa-check-circle text-orange-500 mt-0.5"></i><span class="text-dark-700">Wheel
+                                Balancing</span></li>
+                        <li class="flex gap-3 items-start"><i
+                                class="fas fa-check-circle text-orange-500 mt-0.5"></i><span
+                                class="text-dark-700">Injectors Cleaning</span></li>
+                    </ul>
+                    <a href="#contact" class="mt-6 block text-center py-3 btn-orange-outline font-bold text-sm">Book
+                        Now</a>
+                </div>
+                <!-- Sedan — Featured -->
+                <div class="price-card featured p-8 flex flex-col relative" style="transform:scale(1.03);">
+                    <div
+                        class="absolute -top-4 left-1/2 -translate-x-1/2 px-5 py-1.5 btn-orange rounded-full text-xs font-black tracking-wide">
+                        MOST POPULAR</div>
+                    <div class="text-center mb-6">
+                        <div class="w-14 h-14 mx-auto rounded-2xl flex items-center justify-center mb-4 btn-orange"><i
+                                class="fas fa-car text-white text-2xl"></i></div>
+                        <h3 class="text-xl font-black text-dark-900">Sedan</h3>
+                        <p class="text-muted text-sm">Segment C</p>
+                        <div class="mt-4 text-5xl font-black text-dark-900">₹1,899<span
+                                class="text-base font-normal text-muted">/-</span></div>
+                        <p class="text-muted text-xs mt-1">Twice a year</p>
+                    </div>
+                    <ul class="space-y-3 text-sm flex-1">
+                        <li class="flex gap-3 items-start"><i
+                                class="fas fa-check-circle text-orange-500 mt-0.5"></i><span class="text-dark-700">Full
+                                Vehicle Servicing</span></li>
+                        <li class="flex gap-3 items-start"><i
+                                class="fas fa-check-circle text-orange-500 mt-0.5"></i><span class="text-dark-700">Wheel
+                                Alignment</span></li>
+                        <li class="flex gap-3 items-start"><i
+                                class="fas fa-check-circle text-orange-500 mt-0.5"></i><span class="text-dark-700">Wheel
+                                Balancing</span></li>
+                        <li class="flex gap-3 items-start"><i
+                                class="fas fa-check-circle text-orange-500 mt-0.5"></i><span
+                                class="text-dark-700">Injectors Cleaning</span></li>
+                    </ul>
+                    <a href="#contact" class="mt-6 block text-center py-3 btn-orange font-bold text-sm">Book Now</a>
+                </div>
+                <!-- SUV -->
+                <div class="price-card bg-white p-8 flex flex-col">
+                    <div class="text-center mb-6">
+                        <div class="w-14 h-14 mx-auto rounded-2xl flex items-center justify-center mb-4 bg-orange-50"><i
+                                class="fas fa-truck text-orange-500 text-2xl"></i></div>
+                        <h3 class="text-xl font-black text-dark-900">SUV</h3>
+                        <p class="text-muted text-sm">All SUV Models</p>
+                        <div class="mt-4 text-5xl font-black text-dark-900">₹2,499<span
+                                class="text-base font-normal text-muted">/-</span></div>
+                        <p class="text-muted text-xs mt-1">Twice a year</p>
+                    </div>
+                    <ul class="space-y-3 text-sm flex-1">
+                        <li class="flex gap-3 items-start"><i
+                                class="fas fa-check-circle text-orange-500 mt-0.5"></i><span class="text-dark-700">Full
+                                Vehicle Servicing</span></li>
+                        <li class="flex gap-3 items-start"><i
+                                class="fas fa-check-circle text-orange-500 mt-0.5"></i><span class="text-dark-700">Wheel
+                                Alignment</span></li>
+                        <li class="flex gap-3 items-start"><i
+                                class="fas fa-check-circle text-orange-500 mt-0.5"></i><span class="text-dark-700">Wheel
+                                Balancing</span></li>
+                        <li class="flex gap-3 items-start"><i
+                                class="fas fa-check-circle text-orange-500 mt-0.5"></i><span
+                                class="text-dark-700">Injectors Cleaning</span></li>
+                    </ul>
+                    <a href="#contact" class="mt-6 block text-center py-3 btn-orange-outline font-bold text-sm">Book
+                        Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════ WHY CHOOSE US ═══════ -->
+    <section id="why-us" class="sec bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-14">
+                <span class="badge-orange">Why Us</span>
+                <h2 class="text-4xl md:text-5xl font-black text-dark-900 mb-4">Why Choose <span
+                        class="text-grad">Geetika Motors</span></h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="card p-8 text-center">
+                    <div class="w-16 h-16 mx-auto btn-orange rounded-2xl flex items-center justify-center mb-5"><i
+                            class="fas fa-thumbs-up text-white text-2xl"></i></div>
+                    <h3 class="text-xl font-bold text-dark-900 mb-3">Best Services</h3>
+                    <p class="text-muted text-sm leading-relaxed">We provide the best levels of service to all our
+                        customers ensuring they enjoy a safe and pleasant driving experience.</p>
+                </div>
+                <div class="card p-8 text-center">
+                    <div class="w-16 h-16 mx-auto btn-orange rounded-2xl flex items-center justify-center mb-5"><i
+                            class="fas fa-medal text-white text-2xl"></i></div>
+                    <h3 class="text-xl font-bold text-dark-900 mb-3">Higher Quality</h3>
+                    <p class="text-muted text-sm leading-relaxed">We never compromise vehicle performance and safety.
+                        Genuine parts, skilled labor, and certified quality guaranteed.</p>
+                </div>
+                <div class="card p-8 text-center">
+                    <div class="w-16 h-16 mx-auto btn-orange rounded-2xl flex items-center justify-center mb-5"><i
+                            class="fas fa-user-tie text-white text-2xl"></i></div>
+                    <h3 class="text-xl font-bold text-dark-900 mb-3">Expert Team</h3>
+                    <p class="text-muted text-sm leading-relaxed">Our 25+ certified technicians bring expertise across
+                        all vehicle brands, makes and models you can rely on.</p>
+                </div>
+            </div>
+            <!-- Insurance Partners -->
+            <div class="mt-14 bg-amber-50 rounded-3xl p-8 border border-amber-100">
+                <h3 class="text-lg font-bold text-dark-900 mb-6 text-center">Cashless Insurance Partners</h3>
+                <div class="flex flex-wrap justify-center gap-3 text-sm">
+                    <span
+                        class="px-4 py-2 bg-white rounded-full shadow-sm font-medium text-dark-700 border border-amber-100">ICICI
+                        Lombard</span>
+                    <span
+                        class="px-4 py-2 bg-white rounded-full shadow-sm font-medium text-dark-700 border border-amber-100">TATA
+                        AIG</span>
+                    <span
+                        class="px-4 py-2 bg-white rounded-full shadow-sm font-medium text-dark-700 border border-amber-100">Bharti
+                        AXA</span>
+                    <span
+                        class="px-4 py-2 bg-white rounded-full shadow-sm font-medium text-dark-700 border border-amber-100">HDFC
+                        ERGO</span>
+                    <span
+                        class="px-4 py-2 bg-white rounded-full shadow-sm font-medium text-dark-700 border border-amber-100">Bajaj
+                        Allianz</span>
+                    <span
+                        class="px-4 py-2 bg-white rounded-full shadow-sm font-medium text-dark-700 border border-amber-100">Liberty
+                        Videocon</span>
+                    <span
+                        class="px-4 py-2 bg-white rounded-full shadow-sm font-medium text-dark-700 border border-amber-100">IFFCO
+                        Tokio</span>
+                    <span
+                        class="px-4 py-2 bg-white rounded-full shadow-sm font-medium text-dark-700 border border-amber-100">Future
+                        Generali</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════ CTA BANNER ═══════ -->
+    <section class="py-20 relative overflow-hidden" style="background:linear-gradient(135deg,#F59E0B 0%,#D97706 100%);">
+        <div class="absolute inset-0 opacity-10" style="background-image:url('img/cta-bg.jpg');background-size:cover;">
+        </div>
+        <div class="relative max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-4xl md:text-5xl font-black text-white mb-4">Ready to Service Your Car?</h2>
+            <p class="text-amber-100 text-lg mb-8">Book your service today and experience the Geetika Motors difference.
+            </p>
+            <div class="flex flex-wrap gap-4 justify-center">
+                <a href="#contact"
+                    class="px-10 py-4 bg-white text-orange-600 font-black rounded-xl text-base hover:bg-amber-50 transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1">Enquire
+                    Now &ensp;<i class="fas fa-angle-right"></i></a>
+                <a href="tel:02026835544"
+                    class="px-10 py-4 border-2 border-white text-white font-bold rounded-xl text-base hover:bg-white hover:text-orange-600 transition-all"><i
+                        class="fas fa-phone mr-2"></i>Call Us Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════ GALLERY ═══════ -->
+    <section id="gallery" class="sec" style="background:#F9FAFB;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-14">
+                <span class="badge-orange">Portfolio</span>
+                <h2 class="text-4xl md:text-5xl font-black text-dark-900 mb-4">Our <span
+                        class="text-grad">Gallery</span></h2>
+                <p class="text-muted text-lg">A glimpse inside our state-of-the-art workshop.</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                <div class="gal-item shadow-md hover:shadow-xl transition-shadow duration-300"><img
+                        src="img/portfolio/g1.jpg" alt="Workshop" loading="lazy"></div>
+                <div class="gal-item shadow-md hover:shadow-xl transition-shadow duration-300"><img
+                        src="img/portfolio/g2.jpg" alt="Service" loading="lazy"></div>
+                <div class="gal-item shadow-md hover:shadow-xl transition-shadow duration-300"><img
+                        src="img/portfolio/g3.jpg" alt="Car Care" loading="lazy"></div>
+                <div class="gal-item shadow-md hover:shadow-xl transition-shadow duration-300"><img
+                        src="img/portfolio/g4.jpg" alt="Repair" loading="lazy"></div>
+                <div class="gal-item shadow-md hover:shadow-xl transition-shadow duration-300"><img
+                        src="img/portfolio/g5.jpg" alt="Alignment" loading="lazy"></div>
+                <div class="gal-item shadow-md hover:shadow-xl transition-shadow duration-300"><img
+                        src="img/portfolio/g6.jpg" alt="Detailing" loading="lazy"></div>
+                <div class="gal-item shadow-md hover:shadow-xl transition-shadow duration-300"><img
+                        src="img/portfolio/g7.jpg" alt="Engine" loading="lazy"></div>
+                <div class="gal-item shadow-md hover:shadow-xl transition-shadow duration-300"><img
+                        src="img/portfolio/g8.jpg" alt="Painting" loading="lazy"></div>
+                <div class="gal-item shadow-md hover:shadow-xl transition-shadow duration-300"><img
+                        src="img/portfolio/g9.jpg" alt="Team" loading="lazy"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════ TESTIMONIALS ═══════ -->
+    <section id="testimonials" class="sec bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-14">
+                <span class="badge-orange">Testimonials</span>
+                <h2 class="text-4xl md:text-5xl font-black text-dark-900 mb-4">What Our <span class="text-grad">Clients
+                        Say</span></h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <div class="testi-card p-8 border-t-4 border-orange-400">
+                    <div class="flex text-orange-400 text-sm mb-4 gap-0.5"><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i></div>
+                    <p class="text-muted leading-relaxed mb-6 text-sm">"I have known Geetika Motors for many years now,
+                        and have always been impressed with his professionalism and attention to detail. Their prices
+                        are extremely competitive, even cheap when compared to main dealers."</p>
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="w-10 h-10 rounded-full btn-orange flex items-center justify-center font-black text-sm flex-shrink-0">
+                            S</div>
+                        <div>
+                            <div class="font-bold text-dark-900 text-sm">Mr. Sagarv Patil</div>
+                            <div class="text-xs text-muted">Loyal Customer, Pune</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testi-card p-8 border-t-4 border-orange-400">
+                    <div class="flex text-orange-400 text-sm mb-4 gap-0.5"><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i></div>
+                    <p class="text-muted leading-relaxed mb-6 text-sm">"I have been a regular customer of this garage.
+                        The team and technicians are really helpful. I'm always confident and relaxed after getting work
+                        done from them. I'm fully satisfied with their service and highly recommend them."</p>
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="w-10 h-10 rounded-full btn-orange flex items-center justify-center font-black text-sm flex-shrink-0">
+                            S</div>
+                        <div>
+                            <div class="font-bold text-dark-900 text-sm">Mr. Satish Vora</div>
+                            <div class="text-xs text-muted">Regular Customer, Pune</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════ CONTACT ═══════ -->
+    <section id="contact" class="sec" style="background:#F9FAFB;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-14">
+                <span class="badge-orange">Contact</span>
+                <h2 class="text-4xl md:text-5xl font-black text-dark-900 mb-4">Book a <span
+                        class="text-grad">Service</span></h2>
+                <p class="text-muted text-lg">Request a callback and our team will get back to you within hours.</p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Form -->
+                <div class="bg-white rounded-3xl p-8 shadow-xl">
+                    <h3 class="text-2xl font-black text-dark-900 mb-6">Request a Call Back</h3>
+                    <form method="post" action="php.php" class="space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label
+                                    class="block text-xs font-semibold text-dark-700 mb-1.5 uppercase tracking-wide">Name
+                                    *</label>
+                                <input type="text" name="name" required placeholder="Your Name">
+                            </div>
+                            <div>
+                                <label
+                                    class="block text-xs font-semibold text-dark-700 mb-1.5 uppercase tracking-wide">Email
+                                    *</label>
+                                <input type="email" name="email" required placeholder="your@email.com">
+                            </div>
+                        </div>
+                        <div>
+                            <label
+                                class="block text-xs font-semibold text-dark-700 mb-1.5 uppercase tracking-wide">Phone
+                                *</label>
+                            <input type="tel" name="phone" required placeholder="+91 00000 00000">
+                        </div>
+                        <div>
+                            <label
+                                class="block text-xs font-semibold text-dark-700 mb-1.5 uppercase tracking-wide">Service
+                                Required</label>
+                            <input type="text" name="select" placeholder="e.g. General Servicing, AC Repair...">
+                        </div>
+                        <button type="submit" class="w-full py-4 btn-orange text-base font-bold rounded-xl">Submit
+                            Request &ensp;<i class="fas fa-arrow-right"></i></button>
+                    </form>
+                    <!-- Quick Contact -->
+                    <div class="mt-7 pt-6 border-t border-gray-100 space-y-3">
+                        <a href="tel:02026835544"
+                            class="flex items-center gap-3 text-dark-700 hover:text-orange-500 transition-colors text-sm font-medium">
+                            <span
+                                class="w-8 h-8 btn-orange rounded-lg flex items-center justify-center text-xs flex-shrink-0"><i
+                                    class="fas fa-phone"></i></span> 020 2683 5544 &nbsp;|&nbsp; 98224 46464
+                        </a>
+                        <a href="mailto:info@gitikamotors.com"
+                            class="flex items-center gap-3 text-dark-700 hover:text-orange-500 transition-colors text-sm font-medium">
+                            <span
+                                class="w-8 h-8 btn-orange rounded-lg flex items-center justify-center text-xs flex-shrink-0"><i
+                                    class="fas fa-envelope"></i></span> info@gitikamotors.com
+                        </a>
+                        <div class="flex items-start gap-3 text-dark-700 text-sm font-medium">
+                            <span
+                                class="w-8 h-8 btn-orange rounded-lg flex items-center justify-center text-xs flex-shrink-0 mt-0.5"><i
+                                    class="fas fa-map-marker-alt"></i></span>
+                            <span>86/A, Salunke Vihar Rd, Opp Gulmohar Habitat,<br>Wanowrie, Pune – 411040</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Map -->
+                <div class="rounded-3xl overflow-hidden shadow-xl" style="min-height:480px;">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d236.52420611319116!2d73.93384719017682!3d18.46610797173889!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xfbe87c8e52388c1e!2sGeetika%20Motors!5e0!3m2!1sen!2sin!4v1572071767495!5m2!1sen!2sin"
+                        width="100%" height="100%" style="border:0;min-height:480px;" allowfullscreen
+                        loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════ FOOTER ═══════ -->
+    <footer style="background:#111827;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+                <div class="md:col-span-2">
+                    <div class="flex items-center gap-2.5 mb-4">
+                        <div class="w-9 h-9 rounded-lg flex items-center justify-center btn-orange"><i
+                                class="fas fa-car text-white text-sm"></i></div>
+                        <span class="text-xl font-black text-white">Geetika <span class="text-grad">Motors</span></span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-4 max-w-sm">Geetika Motors provides the best
+                        levels of service ensuring a safe and pleasant driving experience. Expert care for all makes and
+                        models under one roof.</p>
+                    <p class="text-sm text-gray-500"><i class="fas fa-phone text-orange-400 mr-2"></i>020 2683 5544
+                        &nbsp;|&nbsp; 98224 46464</p>
+                    <div class="flex gap-3 mt-4">
+                        <a href="#"
+                            class="w-9 h-9 bg-gray-800 rounded-lg flex items-center justify-center text-gray-400 hover:text-orange-400 hover:bg-gray-700 transition-colors"><i
+                                class="fab fa-facebook-f text-sm"></i></a>
+                        <a href="#"
+                            class="w-9 h-9 bg-gray-800 rounded-lg flex items-center justify-center text-gray-400 hover:text-orange-400 hover:bg-gray-700 transition-colors"><i
+                                class="fab fa-instagram text-sm"></i></a>
+                        <a href="#"
+                            class="w-9 h-9 bg-gray-800 rounded-lg flex items-center justify-center text-gray-400 hover:text-orange-400 hover:bg-gray-700 transition-colors"><i
+                                class="fab fa-twitter text-sm"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#home" class="text-gray-400 hover:text-orange-400 transition-colors">Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-orange-400 transition-colors">About Us</a>
+                        </li>
+                        <li><a href="#services"
+                                class="text-gray-400 hover:text-orange-400 transition-colors">Services</a></li>
+                        <li><a href="#packages"
+                                class="text-gray-400 hover:text-orange-400 transition-colors">Pricing</a></li>
+                        <li><a href="#gallery" class="text-gray-400 hover:text-orange-400 transition-colors">Gallery</a>
+                        </li>
+                        <li><a href="#testimonials"
+                                class="text-gray-400 hover:text-orange-400 transition-colors">Testimonials</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-orange-400 transition-colors">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Contact</h4>
+                    <div class="space-y-3 text-sm text-gray-400">
+                        <p><i class="fas fa-map-marker-alt text-orange-400 mr-2"></i>86/A, Salunke Vihar Rd,<br><span
+                                class="ml-5">Wanowrie, Pune – 411040</span></p>
+                        <p><i class="fas fa-envelope text-orange-400 mr-2"></i>info@gitikamotors.com</p>
+                        <p><i class="fas fa-clock text-orange-400 mr-2"></i>Mon–Sat: 8:00 AM – 8:00 PM</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="py-5 text-center text-gray-600 text-sm" style="border-top:1px solid rgba(255,255,255,0.05);">
+            <p>© 2025 Geetika Motors. All Rights Reserved. Designed by <a href="#"
+                    class="text-orange-400 hover:underline">Mahen 9975133003</a></p>
+        </div>
+    </footer>
+
+    <!-- Scroll-to-top -->
+    <a href="#home" id="scrollTop"
+        class="fixed bottom-6 right-6 w-12 h-12 btn-orange rounded-xl flex items-center justify-center shadow-xl z-40">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script>
+        const scrollBtn = document.getElementById('scrollTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 400) scrollBtn.classList.add('visible');
+            else scrollBtn.classList.remove('visible');
+
+            const nav = document.getElementById('navbar');
+            nav.style.boxShadow = window.scrollY > 20 ? '0 2px 24px rgba(0,0,0,0.1)' : '0 2px 20px rgba(0,0,0,0.08)';
+        });
+
+        document.querySelectorAll('#mobile-menu a').forEach(a =>
+            a.addEventListener('click', () => document.getElementById('mobile-menu').classList.remove('open'))
+        );
+
+        // Scroll-fade-in for cards
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.style.opacity = '1';
+                    e.target.style.transform = e.target.style.transform.replace('translateY(24px)', 'translateY(0)') || 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.card, .testi-card, .stat-card, .price-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = (el.style.transform || '') + ' translateY(24px)';
+            el.style.transition = (el.style.transition || '') + ', opacity 0.55s ease, transform 0.55s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+
+</html>
